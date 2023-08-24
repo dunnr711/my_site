@@ -1,0 +1,26 @@
+
+{% load static %}
+{% block content %}
+<div class="col">
+    <div class="card shadow-sm ">
+      {% comment %} <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> {% endcomment %}
+        <img src="{{post.title_image.url}}" class="card-img-top img-thumbnail" alt="{{post.title}}">
+      <div class="card-body">
+        {% for tag in post.tags.all %}
+        <a type="button" href ="{% url 'search_view'  %}?tag={{tag.pk}}" class="btn btn-sm btn-outline-light">
+            <span class="badge rounded-pill bg-secondary">{{tag.caption}}</span>
+        </a>
+        {% endfor %}
+        <h6 class="mt-2">{{post.title}}</h1>
+        <p class="card-text">{{ post.excerpt }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a href="{% url 'post-detail-page' post.slug %}" role="button" class="btn btn-sm btn-outline-secondary">View</a>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+          </div>
+          <small class="text-muted">{{post.date}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

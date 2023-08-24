@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock title %}
+{% block content %}
+  <main>
+  
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Ryan's Blog</h1>
+          <p class="lead text-muted">In the summer of 2023, I received a grant from Carleton College to visit Japan and learn about ukiyo-e art and Japanese music.</p>
+          <p>
+            {% for tag in tags %}
+            <a href="{% url 'search_view' %}?tag={{tag.pk}} " class="btn btn-secondary my-2">{{tag.caption}}</a>
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center">Latest Posts</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  
+  </main>
+  
+        
+    </body>
+{% endblock content %}

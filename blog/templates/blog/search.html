@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    <ul>
+        <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for post in results %}
+                {% include "blog/includes/post.html" %}
+            {% empty %}
+                <p>No results found.</p>
+            {% endfor %}
+          </div>
+        </div>
+
+    </ul>
+{% endblock %}
