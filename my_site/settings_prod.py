@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'storages',
+
     'bootstrap5',
     'ckeditor',
 ]
@@ -166,3 +168,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/files/"
 MEDIAFILES_DIRS = (os.path.join(BASE_DIR, "uploads/posts"),)
+
+
+AWS_ACCESS_KEY_ID = 'DO00WFZA64JGVZHZ27KF'
+AWS_SECRET_ACCESS_KEY = 'pxRvW0gpVsNWvoOap9kX6kv5PDYPEpw8Q5CyTXNOQdI'
+AWS_STORAGE_BUCKET_NAME = 'my-blog-media-files'
+AWS_S3_ENDPOINT_URL = 'https://nyc3.digitaloceanspaces.com'
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'my-blog-images'
+
+MEDIAFILES_DIRS = [
+    os.path.join(BASE_DIR, 'my_site/media'),
+]
+MEDIA_URL = 'https://%s/%s/' % (AWS_S3_ENDPOINT_URL, AWS_LOCATION)
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
