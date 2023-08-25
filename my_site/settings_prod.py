@@ -181,7 +181,7 @@ if USE_SPACES:
     STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     # public media settings
-    PUBLIC_MEDIA_LOCATION = 'media'
+    PUBLIC_MEDIA_LOCATION = 'media-files'
     MEDIA_URL = f'https://{AWS_S3_ENDPOINT_URL}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'hello_django.storage_backends.PublicMediaStorage'
 else:
