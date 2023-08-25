@@ -1,2 +1,5 @@
 .env
 .venv
+__pycache__/
+blog/__pycache__/
+my_site/__pycache__/
