@@ -165,4 +165,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Where I store images
 MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/files/"
-
+MEDIAFILES_DIRS = (os.path.join(BASE_DIR, "uploads/posts"),)
