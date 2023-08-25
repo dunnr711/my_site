@@ -19,9 +19,14 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+# Define the URL patterns for the project
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", include("blog.urls")),
+    path('admin/', admin.site.urls),  # URL pattern for the admin site
+    path("", include("blog.urls")),   # Include URLs from the "blog" app
 ]
-#+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) \
-# + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+
+# # Serve media files during development
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# # Serve static files during development
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
