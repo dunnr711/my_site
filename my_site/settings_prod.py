@@ -159,7 +159,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Default primary key field type pxRvW0gpVsNWvoOap9kX6kv5PDYPEpw8Q5CyTXNOQdI
+# Default primary key field type ti+aPaohsAwAVzp6Wi8lmRhJOAG5JSkOncdE5IhQfY4
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -176,7 +176,7 @@ if USE_SPACES:
     AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_ENDPOINT_URL = 'https://nyc3.digitaloceanspaces.com'
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+    # AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # static settings
     AWS_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_ENDPOINT_URL}/{AWS_LOCATION}/'
@@ -191,4 +191,4 @@ else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
-STATICFILES_DIRS = (BASE_DIR / 'static',)
+# STATICFILES_DIRS = (BASE_DIR / 'static',)
