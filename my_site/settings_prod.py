@@ -168,6 +168,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 USE_SPACES = os.getenv('USE_SPACES') == 'TRUE'
 
+#added new comment to create new deployment. May delete this later. 
 if USE_SPACES:
     # settings
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
