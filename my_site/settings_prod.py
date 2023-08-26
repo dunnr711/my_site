@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'tinymce',
     'bootstrap5',
     # 'ckeditor',
-    # 'tinymce',
+    'tinymce',
 ]
 
 TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js'
