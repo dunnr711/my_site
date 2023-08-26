@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     # 'tinymce',
     # 'ckeditor',
 ]
-
+TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/v8ycykt0xhbxutnkxstt9eo4mt9tv4xjqo8d20mgdmapmig3/tinymce/5/tinymce.min.js'
+TINYMCE_COMPRESSOR = False
 
 # CKEDITOR_CONFIGS = {
 #     'default': {
