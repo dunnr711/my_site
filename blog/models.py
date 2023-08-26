@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models.fields import DateField, SlugField
-from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Author(models.Model):
@@ -29,7 +29,7 @@ class Post(models.Model):
     post_image = models.ImageField(upload_to="posts", null=True, blank=True)
     date = models.DateTimeField(auto_now=True, auto_now_add=False)
     slug = models.SlugField(unique=True, db_index=True)
-    content = RichTextField()
+    content = HTMLField()
     author = models.ForeignKey(
         Author, on_delete=models.SET_NULL, related_name="posts", null=True, blank=True)
     tags = models.ManyToManyField(Tag, blank=True)

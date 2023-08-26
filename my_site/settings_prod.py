@@ -49,19 +49,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'storages',
-
+    'tinymce',
     'bootstrap5',
-    'ckeditor',
+    # 'ckeditor',
+    # 'tinymce',
 ]
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Full',
-        'height': 300,
-        'width': '100%',
-        'clipboard_handleImages': False,
-    }
-}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

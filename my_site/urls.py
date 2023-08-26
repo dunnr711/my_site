@@ -22,7 +22,8 @@ from django.conf import settings
 # Define the URL patterns for the project
 urlpatterns = [
     path('admin/', admin.site.urls),  # URL pattern for the admin site
-    path("", include("blog.urls")),   # Include URLs from the "blog" app
+    path("", include("blog.urls")),   # Include URLs from the "blog" app,
+     path('tinymce/', include('tinymce.urls')),
 ]
 
 # # Serve media files during development

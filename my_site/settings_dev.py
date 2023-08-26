@@ -49,17 +49,22 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bootstrap5',
-    'ckeditor',
+    'tinymce',
+    # 'tinymce',
+    # 'ckeditor',
 ]
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Full',
-        'height': 300,
-        'width': '100%',
-        'clipboard_handleImages': False,
-    }
-}
+
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'Full',
+#         'height': 300,
+#         'width': '100%',
+#         'clipboard_handleImages': False,
+#     }
+# }
+# CKEDITOR_UPLOAD_PATH = 'uploads/'
+# CKEDITOR_IMAGE_BACKEND = "pillow"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
