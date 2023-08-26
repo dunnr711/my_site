@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'storages',
-    'tinymce',
     'bootstrap5',
     # 'ckeditor',
     'tinymce',
