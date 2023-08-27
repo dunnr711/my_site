@@ -15,11 +15,14 @@ class StartingPageView(ListView):
     context_object_name = "posts"
     def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
-        tags = Tag.objects.all()
+        included_tags = ["Music", "Ukiyo-e"]
+        tags = Tag.objects.filter(caption__in=included_tags)
         context["tags"] = tags
         return context
     def get_queryset(self) -> QuerySet[Any]:
         queryset = super().get_queryset()
+        queryset = queryset.exclude(tags__caption='in-progress')  # Exclude posts with the 'in-progress' tag
+        data = queryset[:3]
         data = queryset [:3]
         return data
     
@@ -29,6 +32,11 @@ class AllPostView(ListView):
     model = Post
     ordering = ["-date"]
     context_object_name = "all_posts"
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.exclude(tags__caption='in-progress')  # Exclude posts with the 'in-progress' tag
+        return queryset
 
 class SinglePostView(View):
     template_name = "blog/post-detail.html"
