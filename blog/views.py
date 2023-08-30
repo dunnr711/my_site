@@ -57,9 +57,9 @@ def search_view(request):
     results = []
 
     if tag:
-        results = Post.objects.filter(Q(tags__pk=tag)).distinct()
+        results = Post.objects.filter(Q(tags__pk=tag)).exclude(tags__caption='in-progress').distinct()
     elif query:
-        results = Post.objects.filter(Q(title__icontains=query)| Q(tags__caption__icontains=query)| Q(excerpt__icontains=query)).distinct()  # Basic search by title
+        results = Post.objects.filter(Q(title__icontains=query)| Q(tags__caption__icontains=query)| Q(excerpt__icontains=query)).exclude(tags__caption='in-progress').distinct()  # Basic search by title
 
     context = {
         'query': query,
