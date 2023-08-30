@@ -7,7 +7,7 @@ from django.db.models import Q
 
 from . models import Post, Tag
 
-# Create your views here.
+# Create your views here. Make new edit. 
 class StartingPageView(ListView):
     template_name = "blog/index.html"
     model = Post
