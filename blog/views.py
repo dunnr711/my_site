@@ -37,6 +37,18 @@ class AllPostView(ListView):
         queryset = super().get_queryset()
         queryset = queryset.exclude(tags__caption='in-progress')  # Exclude posts with the 'in-progress' tag
         return queryset
+    
+
+class InProgressPostView(ListView):
+    template_name = "blog/in-progress.html"
+    model = Post
+    ordering = ["-date"]
+    context_object_name = "all_posts"
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        queryset = queryset.filter(tags__caption='in-progress')  # Retrieve posts with the 'in-progress' tag content
+        return queryset
 
 class SinglePostView(View):
     template_name = "blog/post-detail.html"
