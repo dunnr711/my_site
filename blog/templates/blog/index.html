@@ -9,6 +9,7 @@
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">Ryan's Blog</h1>
           <p class="lead text-muted">In the summer of 2023, I received a grant from Carleton College to visit Japan and learn about ukiyo-e art and Japanese music.</p>
+          <p class="lead text-muted">I used this as an opportunity to learn the Python web development framework Django and built this blog from scratch. </p>
           <p>
             {% for tag in tags %}
             <a href="{% url 'search_view' %}?tag={{tag.pk}} " class="btn btn-secondary my-2">{{tag.caption}}</a>
